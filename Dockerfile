@@ -9,7 +9,7 @@ RUN chmod +x mvnw && ./mvnw dependency:go-offline -q
 COPY src src
 RUN ./mvnw package -DskipTests -q
 
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 
 RUN mkdir -p /uploads
