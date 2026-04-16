@@ -10,6 +10,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body { background: #f0f2f5; }
+        a:hover { color: #b0141a; }
+        .btn-light:hover {
+            color: #fff;
+            background-color: #bf2329;
+            border-color: #bf2329;
+        }
         .login-card { max-width: 420px; border: none; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
         .login-brand { font-size: 1.5rem; font-weight: 700; color: #0d6efd; }
     </style>

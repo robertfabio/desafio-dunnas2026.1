@@ -11,6 +11,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body { background: #f0f2f5; }
+        a:hover { color: #b0141a; }
+        .btn-light:hover {
+            color: #fff;
+            background-color: #bf2329;
+            border-color: #bf2329;
+        }
         .sidebar { width: 240px; min-height: 100vh; background: #1a1d23; flex-shrink: 0; }
         .sidebar .brand { font-size: 1.1rem; font-weight: 700; color: #fff; padding: 1.25rem 1.5rem; border-bottom: 1px solid #2d3139; }
         .sidebar .nav-link { color: #adb5bd; border-radius: 6px; margin: 2px 8px; padding: .5rem 1rem; }
