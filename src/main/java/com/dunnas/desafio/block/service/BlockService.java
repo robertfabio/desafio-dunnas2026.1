@@ -1,6 +1,11 @@
-package com.dunnas.desafio.block;
+package com.dunnas.desafio.block.service;
 
+import com.dunnas.desafio.block.repository.UnitRepository;
+import com.dunnas.desafio.block.repository.BlockRepository;
+import com.dunnas.desafio.block.entity.Unit;
 import com.dunnas.desafio.block.dto.BlockFormDto;
+import com.dunnas.desafio.block.entity.Block;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

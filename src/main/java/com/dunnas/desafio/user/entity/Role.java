@@ -1,4 +1,4 @@
-package com.dunnas.desafio.user;
+package com.dunnas.desafio.user.entity;
 
 public enum Role {
     ADMIN,

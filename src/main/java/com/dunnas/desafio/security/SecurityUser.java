@@ -1,9 +1,10 @@
 package com.dunnas.desafio.security;
 
-import com.dunnas.desafio.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.dunnas.desafio.user.entity.User;
 
 import java.util.Collection;
 import java.util.List;

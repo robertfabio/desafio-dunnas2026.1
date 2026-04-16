@@ -1,13 +1,14 @@
 
-package com.dunnas.desafio.user;
+package com.dunnas.desafio.user.entity;
 
-import com.dunnas.desafio.block.Unit;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.dunnas.desafio.block.entity.Unit;
 
 @Entity
 @Table(name = "users")

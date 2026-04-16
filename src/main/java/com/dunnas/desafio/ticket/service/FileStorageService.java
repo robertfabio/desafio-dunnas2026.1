@@ -1,4 +1,4 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

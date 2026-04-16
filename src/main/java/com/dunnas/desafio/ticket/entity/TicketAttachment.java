@@ -1,9 +1,11 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+
+import com.dunnas.desafio.ticket.entity.Ticket;
 
 @Entity
 @Table(name = "ticket_attachments")

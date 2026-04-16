@@ -1,7 +1,9 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.entity;
 
-import com.dunnas.desafio.block.Unit;
-import com.dunnas.desafio.user.User;
+import com.dunnas.desafio.block.entity.Unit;
+import com.dunnas.desafio.ticket.entity.TicketAttachment;
+import com.dunnas.desafio.user.entity.User;
+
 import jakarta.persistence.*;
 import lombok.*;
 

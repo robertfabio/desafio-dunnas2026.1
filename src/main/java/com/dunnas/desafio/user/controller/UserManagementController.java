@@ -1,7 +1,11 @@
-package com.dunnas.desafio.user;
+package com.dunnas.desafio.user.controller;
 
+import com.dunnas.desafio.user.service.UserService;
 import com.dunnas.desafio.user.dto.AssignUnitsFormDto;
 import com.dunnas.desafio.user.dto.UserFormDto;
+import com.dunnas.desafio.user.entity.Role;
+import com.dunnas.desafio.user.entity.User;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

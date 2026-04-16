@@ -1,7 +1,8 @@
 package com.dunnas.desafio.ticket.specification;
 
-import com.dunnas.desafio.ticket.Ticket;
 import com.dunnas.desafio.ticket.dto.TicketFilterDto;
+import com.dunnas.desafio.ticket.entity.Ticket;
+
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 

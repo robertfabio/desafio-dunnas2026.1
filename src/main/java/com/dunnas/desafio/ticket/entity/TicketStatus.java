@@ -1,20 +1,18 @@
-package com.dunnas.desafio.block;
+package com.dunnas.desafio.ticket.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "blocks")
+@Table(name = "ticket_statuses")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Block {
+public class TicketStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +22,20 @@ public class Block {
     private String name;
 
     @Column(nullable = false)
-    private Integer floors;
-
-    @Column(name = "units_per_floor", nullable = false)
-    private Integer unitsPerFloor;
-
-    @OneToMany(mappedBy = "block", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
-    private List<Unit> units = new ArrayList<>();
+    private String color = "#6c757d";
+
+    @Column(name = "is_default", nullable = false)
+    @Builder.Default
+    private boolean isDefault = false;
+
+    @Column(name = "is_final", nullable = false)
+    @Builder.Default
+    private boolean isFinal = false;
+
+    @Column(name = "sort_order", nullable = false)
+    @Builder.Default
+    private Integer sortOrder = 0;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;

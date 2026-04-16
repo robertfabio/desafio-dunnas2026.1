@@ -1,6 +1,9 @@
-package com.dunnas.desafio.block;
+package com.dunnas.desafio.block.controller;
 
+import com.dunnas.desafio.block.service.BlockService;
 import com.dunnas.desafio.block.dto.BlockFormDto;
+import com.dunnas.desafio.block.entity.Block;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

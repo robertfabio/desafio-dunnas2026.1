@@ -1,7 +1,9 @@
-package com.dunnas.desafio.block;
+package com.dunnas.desafio.block.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.dunnas.desafio.block.entity.Unit;
 
 import java.util.List;
 

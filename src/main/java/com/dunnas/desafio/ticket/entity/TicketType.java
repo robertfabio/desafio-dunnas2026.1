@@ -1,4 +1,4 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

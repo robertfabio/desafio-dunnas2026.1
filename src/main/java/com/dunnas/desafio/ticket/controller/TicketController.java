@@ -1,10 +1,15 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.controller;
 
-import com.dunnas.desafio.block.UnitRepository;
+import com.dunnas.desafio.ticket.service.TicketTypeService;
+import com.dunnas.desafio.ticket.service.TicketStatusService;
+import com.dunnas.desafio.ticket.service.TicketService;
+import com.dunnas.desafio.block.repository.UnitRepository;
 import com.dunnas.desafio.security.SecurityUser;
 import com.dunnas.desafio.ticket.dto.TicketFilterDto;
 import com.dunnas.desafio.ticket.dto.TicketFormDto;
 import com.dunnas.desafio.ticket.dto.UpdateStatusFormDto;
+import com.dunnas.desafio.ticket.entity.Ticket;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

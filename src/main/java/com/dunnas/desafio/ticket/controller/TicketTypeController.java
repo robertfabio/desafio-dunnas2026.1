@@ -1,6 +1,9 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.controller;
 
+import com.dunnas.desafio.ticket.service.TicketTypeService;
 import com.dunnas.desafio.ticket.dto.TicketTypeFormDto;
+import com.dunnas.desafio.ticket.entity.TicketType;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

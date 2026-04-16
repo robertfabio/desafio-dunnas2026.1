@@ -1,6 +1,6 @@
 package com.dunnas.desafio.security;
 
-import com.dunnas.desafio.user.UserRepository;
+import com.dunnas.desafio.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

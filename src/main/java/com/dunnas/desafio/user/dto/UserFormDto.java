@@ -1,6 +1,7 @@
 package com.dunnas.desafio.user.dto;
 
-import com.dunnas.desafio.user.Role;
+import com.dunnas.desafio.user.entity.Role;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

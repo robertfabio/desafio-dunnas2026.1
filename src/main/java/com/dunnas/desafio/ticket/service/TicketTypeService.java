@@ -1,6 +1,9 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.service;
 
+import com.dunnas.desafio.ticket.repository.TicketTypeRepository;
 import com.dunnas.desafio.ticket.dto.TicketTypeFormDto;
+import com.dunnas.desafio.ticket.entity.TicketType;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,6 +1,12 @@
 package com.dunnas.desafio.block;
 
 import com.dunnas.desafio.block.dto.BlockFormDto;
+import com.dunnas.desafio.block.entity.Block;
+import com.dunnas.desafio.block.entity.Unit;
+import com.dunnas.desafio.block.repository.BlockRepository;
+import com.dunnas.desafio.block.repository.UnitRepository;
+import com.dunnas.desafio.block.service.BlockService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

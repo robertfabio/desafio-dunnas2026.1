@@ -1,8 +1,11 @@
-package com.dunnas.desafio.user;
+package com.dunnas.desafio.user.service;
 
-import com.dunnas.desafio.block.Unit;
-import com.dunnas.desafio.block.UnitRepository;
+import com.dunnas.desafio.user.repository.UserRepository;
+import com.dunnas.desafio.block.entity.Unit;
+import com.dunnas.desafio.block.repository.UnitRepository;
 import com.dunnas.desafio.user.dto.UserFormDto;
+import com.dunnas.desafio.user.entity.User;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

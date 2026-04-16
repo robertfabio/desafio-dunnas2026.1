@@ -1,13 +1,22 @@
-package com.dunnas.desafio.ticket;
+package com.dunnas.desafio.ticket.service;
 
-import com.dunnas.desafio.block.Unit;
-import com.dunnas.desafio.block.UnitRepository;
+import com.dunnas.desafio.ticket.service.FileStorageService;
+import com.dunnas.desafio.ticket.repository.TicketTypeRepository;
+import com.dunnas.desafio.ticket.repository.TicketStatusRepository;
+import com.dunnas.desafio.ticket.repository.TicketRepository;
+import com.dunnas.desafio.ticket.repository.TicketAttachmentRepository;
+import com.dunnas.desafio.ticket.entity.TicketType;
+import com.dunnas.desafio.ticket.entity.TicketStatus;
+import com.dunnas.desafio.ticket.entity.TicketAttachment;
+import com.dunnas.desafio.block.entity.Unit;
+import com.dunnas.desafio.block.repository.UnitRepository;
 import com.dunnas.desafio.security.SecurityUser;
 import com.dunnas.desafio.ticket.dto.TicketFilterDto;
 import com.dunnas.desafio.ticket.dto.TicketFormDto;
+import com.dunnas.desafio.ticket.entity.Ticket;
 import com.dunnas.desafio.ticket.specification.TicketSpecification;
-import com.dunnas.desafio.user.User;
-import com.dunnas.desafio.user.UserRepository;
+import com.dunnas.desafio.user.entity.User;
+import com.dunnas.desafio.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
