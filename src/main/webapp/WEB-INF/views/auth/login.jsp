@@ -9,21 +9,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { background: #f0f2f5; }
-        a:hover { color: #b0141a; }
-        .btn-light:hover {
-            color: #fff;
-            background-color: #bf2329;
-            border-color: #bf2329;
+        :root {
+            --dnn-red: #bf2329;
+            --dnn-red-dark: #8e1016;
         }
-        .login-card { max-width: 420px; border: none; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
-        .login-brand { font-size: 1.5rem; font-weight: 700; color: #0d6efd; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        body { background: linear-gradient(135deg, #1a1d23 0%, #2d3139 100%); }
+        a:hover { color: var(--dnn-red); }
+        .login-card {
+            max-width: 420px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.35);
+            animation: fadeUp .45s ease both;
+        }
+        .login-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dnn-red);
+        }
+        .login-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--dnn-red);
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        .btn-primary {
+            background: var(--dnn-red);
+            border-color: var(--dnn-red);
+            transition: background .18s ease, box-shadow .18s ease, transform .12s ease;
+        }
+        .btn-primary:hover {
+            background: var(--dnn-red-dark);
+            border-color: var(--dnn-red-dark);
+            box-shadow: 0 4px 14px rgba(191,35,41,.45);
+        }
+        .btn-primary:active { transform: scale(.97); }
+        .form-control:focus { border-color: var(--dnn-red); box-shadow: 0 0 0 .2rem rgba(191,35,41,.18); }
     </style>
 </head>
 <body class="d-flex align-items-center justify-content-center min-vh-100">
     <div class="card login-card p-4 w-100 mx-3">
         <div class="text-center mb-4">
-            <div class="login-brand"><i class="bi bi-building"></i> Condomínio</div>
+            <div class="login-brand"><span class="login-dot"></span><i class="bi bi-building"></i> Condomínio</div>
             <p class="text-muted small mt-1">Sistema de Chamados</p>
         </div>
 

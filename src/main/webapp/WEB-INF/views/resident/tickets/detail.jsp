@@ -95,7 +95,7 @@
                     </c:otherwise>
                 </c:choose>
 
-                <c:if test="${not ticket.status.final}">
+                <c:if test="${not ticket.status['final']}">
                     <hr>
                     <h6 class="mb-2">Adicionar Comentário</h6>
                     <form:form method="post"

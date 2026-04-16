@@ -125,7 +125,7 @@
                     ${ticket.status.name}
                 </span>
 
-                <c:if test="${not ticket.status.final}">
+                <c:if test="${not ticket.status['final']}">
                     <hr>
                     <h6 class="mb-3">Atualizar Status</h6>
                     <form:form method="post"

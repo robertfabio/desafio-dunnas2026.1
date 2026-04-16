@@ -45,12 +45,12 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <c:if test="${status.default}">
+                                        <c:if test="${status['default']}">
                                             <i class="bi bi-check-circle-fill text-success"></i>
                                         </c:if>
                                     </td>
                                     <td>
-                                        <c:if test="${status.final}">
+                                        <c:if test="${status['final']}">
                                             <i class="bi bi-flag-fill text-danger"></i>
                                         </c:if>
                                     </td>
