@@ -6,6 +6,7 @@ import com.dunnas.desafio.block.entity.Unit;
 import com.dunnas.desafio.block.dto.BlockFormDto;
 import com.dunnas.desafio.block.entity.Block;
 
+import com.dunnas.desafio.audit.aspect.Auditable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +32,7 @@ public class BlockService {
             .orElseThrow(() -> new IllegalArgumentException("Bloco não encontrado: " + id));
     }
 
+    @Auditable(action = "BLOCK_CREATED", entityType = "Block")
     @Transactional
     public Block create(BlockFormDto dto) {
         if (blockRepository.existsByName(dto.getName())) {

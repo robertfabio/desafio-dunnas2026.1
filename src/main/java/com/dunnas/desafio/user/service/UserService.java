@@ -1,5 +1,6 @@
 package com.dunnas.desafio.user.service;
 
+import com.dunnas.desafio.audit.aspect.Auditable;
 import com.dunnas.desafio.user.repository.UserRepository;
 import com.dunnas.desafio.block.entity.Unit;
 import com.dunnas.desafio.block.repository.UnitRepository;
@@ -33,6 +34,7 @@ public class UserService {
             .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado: " + id));
     }
 
+    @Auditable(action = "USER_CREATED", entityType = "User")
     @Transactional
     public User create(UserFormDto dto) {
         if (userRepository.existsByEmail(dto.getEmail())) {

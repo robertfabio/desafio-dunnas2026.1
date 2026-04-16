@@ -1,5 +1,6 @@
 package com.dunnas.desafio.comment.service;
 
+import com.dunnas.desafio.audit.aspect.Auditable;
 import com.dunnas.desafio.comment.dto.CommentFormDto;
 import com.dunnas.desafio.comment.entity.TicketComment;
 import com.dunnas.desafio.comment.repository.TicketCommentRepository;
@@ -29,6 +30,7 @@ public class CommentService {
         return commentRepository.findByTicketIdOrderByCreatedAtAsc(ticketId);
     }
 
+    @Auditable(action = "COMMENT_ADDED", entityType = "TicketComment")
     @Transactional
     public TicketComment addComment(Long ticketId, CommentFormDto dto, SecurityUser actor) {
         Ticket ticket = ticketRepository.findById(ticketId)

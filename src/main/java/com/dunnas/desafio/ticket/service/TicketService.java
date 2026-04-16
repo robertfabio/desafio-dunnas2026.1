@@ -17,6 +17,7 @@ import com.dunnas.desafio.ticket.entity.Ticket;
 import com.dunnas.desafio.ticket.specification.TicketSpecification;
 import com.dunnas.desafio.user.entity.User;
 import com.dunnas.desafio.user.repository.UserRepository;
+import com.dunnas.desafio.audit.aspect.Auditable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,6 +61,7 @@ public class TicketService {
             .orElseThrow(() -> new IllegalArgumentException("Chamado não encontrado: " + id));
     }
 
+    @Auditable(action = "TICKET_CREATED", entityType = "Ticket")
     @Transactional
     public Ticket create(TicketFormDto dto, SecurityUser actor) {
         TicketStatus defaultStatus = ticketStatusRepository.findByIsDefaultTrue()
@@ -104,6 +106,7 @@ public class TicketService {
         return ticket;
     }
 
+    @Auditable(action = "TICKET_STATUS_UPDATED", entityType = "Ticket")
     @Transactional
     public Ticket updateStatus(Long ticketId, Long newStatusId) {
         Ticket ticket = findById(ticketId);
