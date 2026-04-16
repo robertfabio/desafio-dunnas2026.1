@@ -66,7 +66,52 @@
         <div class="card border-0 shadow-sm">
             <div class="card-body">
                 <h6 class="mb-3">Comentários</h6>
-                <p class="text-muted small">Comentários serão exibidos aqui.</p>
+
+                <c:if test="${not empty successMessage}">
+                    <div class="alert alert-success alert-dismissible fade show py-2" role="alert">
+                        ${successMessage}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                </c:if>
+                <c:if test="${not empty errorMessage}">
+                    <div class="alert alert-danger alert-dismissible fade show py-2" role="alert">
+                        ${errorMessage}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                </c:if>
+
+                <c:choose>
+                    <c:when test="${empty comments}">
+                        <p class="text-muted small">Nenhum comentário ainda.</p>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="comment" items="${comments}">
+                            <div class="border rounded p-3 mb-2 bg-light">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <strong class="small">${comment.author.name}
+                                        <span class="text-muted fw-normal">(${comment.author.role})</span>
+                                    </strong>
+                                    <span class="text-muted small">
+                                        <fmt:formatDate value="${comment.createdAt}" pattern="dd/MM/yyyy HH:mm"/>
+                                    </span>
+                                </div>
+                                <p class="mb-0 small">${comment.content}</p>
+                            </div>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
+
+                <hr>
+                <h6 class="mb-2">Adicionar Comentário</h6>
+                <form:form method="post"
+                           action="${pageContext.request.contextPath}/staff/tickets/${ticket.id}/comments"
+                           modelAttribute="commentForm">
+                    <div class="mb-2">
+                        <form:textarea path="content" cssClass="form-control form-control-sm"
+                                       rows="3" placeholder="Digite seu comentário..."/>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+                </form:form>
             </div>
         </div>
     </div>

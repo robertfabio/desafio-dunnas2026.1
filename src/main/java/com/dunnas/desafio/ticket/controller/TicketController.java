@@ -4,6 +4,8 @@ import com.dunnas.desafio.ticket.service.TicketTypeService;
 import com.dunnas.desafio.ticket.service.TicketStatusService;
 import com.dunnas.desafio.ticket.service.TicketService;
 import com.dunnas.desafio.block.repository.UnitRepository;
+import com.dunnas.desafio.comment.dto.CommentFormDto;
+import com.dunnas.desafio.comment.service.CommentService;
 import com.dunnas.desafio.security.SecurityUser;
 import com.dunnas.desafio.ticket.dto.TicketFilterDto;
 import com.dunnas.desafio.ticket.dto.TicketFormDto;
@@ -27,6 +29,7 @@ public class TicketController {
     private final TicketTypeService ticketTypeService;
     private final TicketStatusService ticketStatusService;
     private final UnitRepository unitRepository;
+    private final CommentService commentService;
 
     @GetMapping("/resident/tickets")
     public String residentList(@AuthenticationPrincipal SecurityUser actor, Model model) {
@@ -75,6 +78,8 @@ public class TicketController {
                                  Model model) {
         Ticket ticket = ticketService.findById(id);
         model.addAttribute("ticket", ticket);
+        model.addAttribute("comments", commentService.findByTicket(id));
+        model.addAttribute("commentForm", new CommentFormDto());
         model.addAttribute("pageTitle", "Chamado #" + id);
         return "resident/tickets/detail";
     }
@@ -93,6 +98,8 @@ public class TicketController {
     public String staffDetail(@PathVariable Long id, Model model) {
         Ticket ticket = ticketService.findById(id);
         model.addAttribute("ticket", ticket);
+        model.addAttribute("comments", commentService.findByTicket(id));
+        model.addAttribute("commentForm", new CommentFormDto());
         model.addAttribute("statuses", ticketStatusService.findAll());
         model.addAttribute("updateStatusForm", new UpdateStatusFormDto());
         model.addAttribute("pageTitle", "Chamado #" + id);
