@@ -2,6 +2,7 @@ package com.dunnas.desafio.ticket;
 
 import com.dunnas.desafio.block.UnitRepository;
 import com.dunnas.desafio.security.SecurityUser;
+import com.dunnas.desafio.ticket.dto.TicketFilterDto;
 import com.dunnas.desafio.ticket.dto.TicketFormDto;
 import com.dunnas.desafio.ticket.dto.UpdateStatusFormDto;
 import jakarta.validation.Valid;
@@ -74,8 +75,9 @@ public class TicketController {
     }
 
     @GetMapping("/staff/tickets")
-    public String staffList(Model model) {
-        model.addAttribute("tickets", ticketService.findAll());
+    public String staffList(@ModelAttribute TicketFilterDto filter, Model model) {
+        model.addAttribute("tickets", ticketService.findAll(filter));
+        model.addAttribute("filter", filter);
         model.addAttribute("statuses", ticketStatusService.findAll());
         model.addAttribute("types", ticketTypeService.findAll());
         model.addAttribute("pageTitle", "Fila de Chamados");

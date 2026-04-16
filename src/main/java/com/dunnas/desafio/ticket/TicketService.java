@@ -3,7 +3,9 @@ package com.dunnas.desafio.ticket;
 import com.dunnas.desafio.block.Unit;
 import com.dunnas.desafio.block.UnitRepository;
 import com.dunnas.desafio.security.SecurityUser;
+import com.dunnas.desafio.ticket.dto.TicketFilterDto;
 import com.dunnas.desafio.ticket.dto.TicketFormDto;
+import com.dunnas.desafio.ticket.specification.TicketSpecification;
 import com.dunnas.desafio.user.User;
 import com.dunnas.desafio.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +31,11 @@ public class TicketService {
     @Transactional(readOnly = true)
     public List<Ticket> findAll() {
         return ticketRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public List<Ticket> findAll(TicketFilterDto filter) {
+        return ticketRepository.findAll(TicketSpecification.build(filter));
     }
 
     @Transactional(readOnly = true)
