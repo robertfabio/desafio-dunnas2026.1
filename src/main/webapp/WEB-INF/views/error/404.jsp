@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -159,10 +160,26 @@
             Verifique o link ou volte para a página inicial.
         </p>
 
-        <a href="${pageContext.request.contextPath}/" class="btn-home">
-            <i class="bi bi-house-door-fill"></i>
-            Voltar ao início
-        </a>
+        <sec:authorize access="hasRole('ADMIN')">
+            <a href="${pageContext.request.contextPath}/admin/dashboard" class="btn-home">
+                <i class="bi bi-house-door-fill"></i> Voltar ao início
+            </a>
+        </sec:authorize>
+        <sec:authorize access="hasRole('COLLABORATOR')">
+            <a href="${pageContext.request.contextPath}/staff/dashboard" class="btn-home">
+                <i class="bi bi-house-door-fill"></i> Voltar ao início
+            </a>
+        </sec:authorize>
+        <sec:authorize access="hasRole('RESIDENT')">
+            <a href="${pageContext.request.contextPath}/resident/dashboard" class="btn-home">
+                <i class="bi bi-house-door-fill"></i> Voltar ao início
+            </a>
+        </sec:authorize>
+        <sec:authorize access="isAnonymous()">
+            <a href="${pageContext.request.contextPath}/login" class="btn-home">
+                <i class="bi bi-box-arrow-in-right"></i> Ir para o login
+            </a>
+        </sec:authorize>
 
         <div class="footer-note">Dunnas Residences &mdash; Sistema de Gestão Condominial</div>
     </div>
