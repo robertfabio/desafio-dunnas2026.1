@@ -76,12 +76,12 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            color: #fff;
+            color: #a71111;
             padding: 3rem 2.5rem;
         }
         .brand-content img {
-            filter: brightness(0) invert(1);
-            margin-bottom: 2rem;
+            display: block;
+            margin: 0 auto 2rem;
         }
         .brand-tagline {
             font-size: 1.05rem;
@@ -209,7 +209,7 @@
             <div class="stripe stripe-2"></div>
         </div>
         <div class="brand-content">
-            <img src="${pageContext.request.contextPath}/images/logo.svg" alt="Dunnas Residences" height="80">
+            <img src="${pageContext.request.contextPath}/images/logo-white.svg" alt="Dunnas Residences" height="128">
             <p class="brand-tagline">Gestão inteligente de chamados para o seu condomínio.</p>
             <div class="brand-badges">
                 <div class="brand-badge"><i class="bi bi-shield-check"></i> Acesso seguro e auditado</div>
