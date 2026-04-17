@@ -202,7 +202,10 @@
 <body class="d-flex">
 
 <nav class="sidebar d-flex flex-column">
-    <div class="brand"><span class="brand-dot"></span><i class="bi bi-building me-1"></i>Condomínio</div>
+    <div class="brand">
+        <img src="${pageContext.request.contextPath}/images/logo-white.svg"
+             alt="Dunnas Residences" height="52">
+    </div>
     <ul class="nav flex-column mt-2 flex-grow-1">
 
         <sec:authorize access="hasRole('ADMIN')">
