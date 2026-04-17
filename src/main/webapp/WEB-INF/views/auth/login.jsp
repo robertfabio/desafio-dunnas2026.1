@@ -82,6 +82,7 @@
         .brand-content img {
             display: block;
             margin: 0 auto 2rem;
+            margin-left: 8rem;
         }
         .brand-tagline {
             font-size: 1.05rem;

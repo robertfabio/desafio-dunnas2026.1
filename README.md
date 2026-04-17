@@ -7,6 +7,8 @@
 
 ## Início rápido
 
+### Com Docker (recomendado)
+
 ```bash
 git clone <url-do-repositório>
 cd desafio
@@ -15,9 +17,39 @@ docker compose up --build
 
 Acesse: **http://localhost:8080**
 
+### Sem Docker (execução local)
+
+**Pré-requisitos:** Java 21 JDK, Maven 3.9+, PostgreSQL 16 rodando localmente.
+
+```bash
+# 1. Crie o banco de dados
+psql -U postgres -c "CREATE DATABASE condominio;"
+psql -U postgres -c "CREATE USER condominio WITH PASSWORD 'condominio123';"
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE condominio TO condominio;"
+
+# 2. Build e execução
+./mvnw spring-boot:run
+```
+
+O Flyway criará todas as tabelas e dados iniciais automaticamente na primeira execução.
+
+---
+
+## Demo
+
+Acesse a aplicação em produção: **https://desafio-dunnas2026-1.onrender.com**
+
+> O serviço está hospedado no Render (free tier) e pode levar ~60s para iniciar após período de inatividade.
+
+---
+
+## Credenciais iniciais
+
 | Perfil | E-mail | Senha |
 |--------|--------|-------|
 | Administrador | `admin@condominio.com` | `Admin@123` |
+
+> Novos usuários (colaboradores e moradores) devem ser criados pelo administrador após o primeiro login.
 
 ---
 
