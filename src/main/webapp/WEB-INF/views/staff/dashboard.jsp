@@ -39,10 +39,10 @@
         font-size: 1.45rem; flex-shrink: 0;
     }
     .kpi-val { font-size: 2.1rem; font-weight: 800; line-height: 1; color: #111827; }
-    .kpi-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; }
+    .kpi-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; color: #6b7280; }
     .kpi-sub { font-size: .75rem; color: #9ca3af; margin-top: .25rem; }
-    .bg-rose  { background: #fff1f2; } .icon-rose  { background: #ffe4e6; color: #bf2329; } .text-rose  { color: #9f1239; }
-    .bg-slate { background: #f8fafc; } .icon-slate { background: #f1f5f9; color: #475569; } .text-slate { color: #334155; }
+    .kpi-card { background: #fff; }
+    .kpi-icon-box { background: #fff0f0; color: var(--dnn-red); }
     .prog-bar { height: 5px; border-radius: 99px; background: rgba(0,0,0,.07); margin-top: .85rem; overflow: hidden; }
     .prog-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg,#bf2329,#8e1016); width:0; transition: width .9s cubic-bezier(.4,0,.2,1); }
 </style>
@@ -61,11 +61,11 @@
 
 <div class="row g-3 mb-4">
     <div class="col-sm-6">
-        <div class="card kpi-card bg-rose">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-rose">Em aberto</div>
+                <div class="kpi-label">Em aberto</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-rose"><i class="bi bi-ticket-perforated-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-ticket-perforated-fill"></i></div>
                     <div class="kpi-val">${openTickets}
                         <span style="font-size:1rem;font-weight:400;color:#9ca3af">/ ${totalTickets}</span>
                     </div>
@@ -76,11 +76,11 @@
         </div>
     </div>
     <div class="col-sm-6">
-        <div class="card kpi-card bg-slate">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-slate">Total de chamados</div>
+                <div class="kpi-label">Total de chamados</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-slate"><i class="bi bi-archive-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-archive-fill"></i></div>
                     <div class="kpi-val">${totalTickets}</div>
                 </div>
                 <div class="kpi-sub">Histórico completo</div>

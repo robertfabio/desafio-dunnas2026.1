@@ -50,9 +50,7 @@ public class TicketService {
 
     @Transactional(readOnly = true)
     public List<Ticket> findByCreator(Long creatorId) {
-        return ticketRepository.findAll().stream()
-            .filter(t -> t.getCreator().getId().equals(creatorId))
-            .toList();
+        return ticketRepository.findByCreatorId(creatorId);
     }
 
     @Transactional(readOnly = true)

@@ -38,7 +38,7 @@ public class AuditAspect {
             Long entityId = null;
             if (result instanceof org.springframework.data.domain.Persistable<?> p && p.getId() instanceof Long id) {
                 entityId = id;
-            } else {
+            } else if (result != null) {
                 try {
                     var m = result.getClass().getMethod("getId");
                     Object idVal = m.invoke(result);

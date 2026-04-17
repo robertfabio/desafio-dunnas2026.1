@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.dunnas.desafio.ticket.entity.Ticket;
 
+import java.util.List;
+
 public interface TicketRepository extends JpaRepository<Ticket, Long>, JpaSpecificationExecutor<Ticket> {
 
     long countByStatusIsFinalFalse();
@@ -12,4 +14,6 @@ public interface TicketRepository extends JpaRepository<Ticket, Long>, JpaSpecif
     long countByCreatorId(Long creatorId);
 
     long countByCreatorIdAndStatusIsFinalFalse(Long creatorId);
+
+    List<Ticket> findByCreatorId(Long creatorId);
 }

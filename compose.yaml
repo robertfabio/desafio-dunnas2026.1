@@ -22,7 +22,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_PROFILES_ACTIVE: docker
+      DATABASE_URL: jdbc:postgresql://postgres:5432/condominio
+      DATABASE_USERNAME: condominio
+      DATABASE_PASSWORD: condominio123
     volumes:
       - uploads_data:/uploads
     depends_on:

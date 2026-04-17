@@ -45,12 +45,10 @@
         flex-shrink: 0;
     }
     .kpi-val { font-size: 2.1rem; font-weight: 800; line-height: 1; color: #111827; }
-    .kpi-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; }
+    .kpi-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; color: #6b7280; }
     .kpi-sub { font-size: .75rem; color: #9ca3af; margin-top: .25rem; }
-    .bg-blue   { background: #eff6ff; } .icon-blue   { background: #dbeafe; color: #2563eb; } .text-blue   { color: #1d4ed8; }
-    .bg-green  { background: #f0fdf4; } .icon-green  { background: #dcfce7; color: #16a34a; } .text-green  { color: #15803d; }
-    .bg-amber  { background: #fffbeb; } .icon-amber  { background: #fef3c7; color: #d97706; } .text-amber  { color: #b45309; }
-    .bg-rose   { background: #fff1f2; } .icon-rose   { background: #ffe4e6; color: #bf2329; } .text-rose   { color: #9f1239; }
+    .kpi-card { background: #fff; }
+    .kpi-icon-box { background: #fff0f0; color: var(--dnn-red); }
     .prog-bar {
         height: 5px; border-radius: 99px;
         background: rgba(0,0,0,.07); margin-top: .85rem; overflow: hidden;
@@ -93,11 +91,11 @@
 
 <div class="row g-3 mb-4">
     <div class="col-sm-6 col-xl-3">
-        <div class="card kpi-card bg-blue">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-blue">Usuários</div>
+                <div class="kpi-label">Usuários</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-blue"><i class="bi bi-people-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-people-fill"></i></div>
                     <div class="kpi-val">${totalUsers}</div>
                 </div>
                 <div class="kpi-sub">Contas ativas no sistema</div>
@@ -106,11 +104,11 @@
         </div>
     </div>
     <div class="col-sm-6 col-xl-3">
-        <div class="card kpi-card bg-green">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-green">Blocos</div>
+                <div class="kpi-label">Blocos</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-green"><i class="bi bi-building-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-building-fill"></i></div>
                     <div class="kpi-val">${totalBlocks}</div>
                 </div>
                 <div class="kpi-sub">${totalUnits} unidades cadastradas</div>
@@ -119,11 +117,11 @@
         </div>
     </div>
     <div class="col-sm-6 col-xl-3">
-        <div class="card kpi-card bg-amber">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-amber">Unidades</div>
+                <div class="kpi-label">Unidades</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-amber"><i class="bi bi-door-open-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-door-open-fill"></i></div>
                     <div class="kpi-val">${totalUnits}</div>
                 </div>
                 <div class="kpi-sub">Em ${totalBlocks} blocos</div>
@@ -132,11 +130,11 @@
         </div>
     </div>
     <div class="col-sm-6 col-xl-3">
-        <div class="card kpi-card bg-rose">
+        <div class="card kpi-card">
             <div class="card-body">
-                <div class="kpi-label text-rose">Em aberto</div>
+                <div class="kpi-label">Em aberto</div>
                 <div class="d-flex align-items-center gap-3 mt-1">
-                    <div class="kpi-icon-box icon-rose"><i class="bi bi-ticket-perforated-fill"></i></div>
+                    <div class="kpi-icon-box"><i class="bi bi-ticket-perforated-fill"></i></div>
                     <div class="kpi-val">${openTickets}
                         <span style="font-size:1rem;font-weight:400;color:#9ca3af">/ ${totalTickets}</span>
                     </div>
