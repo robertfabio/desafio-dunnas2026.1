@@ -28,7 +28,6 @@
             overflow: hidden;
         }
 
-        /* animated background blobs */
         .bg-blob {
             position: fixed;
             border-radius: 50%;
@@ -70,7 +69,7 @@
             margin-bottom: 2rem;
         }
         .brand-logo img {
-            height: 48px;
+            height: 72px;
         }
 
         .code-badge {
